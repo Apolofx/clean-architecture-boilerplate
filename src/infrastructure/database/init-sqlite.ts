@@ -1,7 +1,7 @@
 import { Database } from "sqlite3";
 
 export const initSQLite = (): Database => {
-  const db = new Database("db.sql");
+  const db = new Database(":memory:");
 
   db.serialize(() => {
     db.run("CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, name TEXT)");
