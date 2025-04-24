@@ -5,10 +5,10 @@ import { registerRoutes } from "./routes";
 export const createServer = () => {
   const app = express();
 
-  // Inicializar la base de datos
+  // Initialize the database
   const db = initSQLite();
 
-  // Registrar rutas
+  // Define routes
   registerRoutes(app, db);
 
   return { app, db };

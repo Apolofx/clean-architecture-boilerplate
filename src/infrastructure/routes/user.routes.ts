@@ -9,5 +9,5 @@ export const userRoutes = (app: Express, db: Database) => {
   const getUserUseCase = new GetUserUseCase(userRepository);
   const userController = new UserController(getUserUseCase);
 
-  app.get("/users/:id", userController.getUser);
+  app.get("/users/:id", (req, res) => userController.getUser(req, res));
 };
